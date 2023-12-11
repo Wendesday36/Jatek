@@ -1,3 +1,3 @@
-# Jatek
-### szerializálás(serializable)
-### Tervezési minta(Design pattern)
+# Game
+#### szerializálás(serializable)
+#### Tervezési minta(Design pattern)
