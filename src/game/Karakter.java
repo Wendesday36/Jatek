@@ -61,6 +61,7 @@ public class Karakter {
     }
 
     public void hasznal(String nev, int db, boolean van) {
+        
         if (van == true) {
             hasznal(nev, db);
         }else{

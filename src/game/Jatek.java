@@ -20,7 +20,11 @@ public class Jatek {
         Karakter[] karakterek = {goblin, farkas};
         kiirTomb("jatekosok:", karakterek);
         
-        farkas.hasznal("husika", 6, false);
+        kiirTomb("jatekosok elem használattal:", karakterek);
+        System.out.println("Farkas elem hasznalat:");
+        farkas.hasznal("husika", 6, true);
+        System.out.println(farkas.toString());
+        farkas.felvesz(t2);
         System.out.println(farkas.toString());
     }
 
