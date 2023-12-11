@@ -1,58 +1,79 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package game;
-
 
 import java.util.ArrayList;
 
-/**
- *
- * @author berta.z.anna
- */
 public class Karakter {
+
     private int eletero;
     private int ugyesseg;
     private int szerencse;
     private ArrayList<Targy> felszereles;
+    private String nev;
 
-    public <T> Karakter() {
-        this.eletero =( dobokocka()+dobokocka())+12;
-        this.ugyesseg = dobokocka()+6;
-        this.szerencse = dobokocka()+6;
-        this.felszereles=felszereles;
-       
+    public <T> Karakter(String nev) {
+        this.nev = nev;
+        this.eletero = (dobokocka() + dobokocka()) + 12;
+        this.ugyesseg = dobokocka() + 6;
+        this.szerencse = dobokocka() + 6;
+        this.felszereles = new ArrayList<>();
+
     }
-    
-    private int dobokocka(){
-        int kocka=(int) ((Math.random()*6)-1)+1;
+
+    private int dobokocka() {
+        int kocka = (int) ((Math.random() * 6) - 1) + 1;
         return kocka;
-        
+
     }
-    
-    public ArrayList<Targy> felvesz(Targy targy){
-        felszereles.add(targy);
-            System.out.println("felvette:"+targy);
-        return felszereles;
-        
-       
-        
+
+    public void felvesz(Targy targy) {
+        felvesz(targy, 1);
+
     }
-    public ArrayList<Targy> felvesz(Targy targy,int darab){
+
+    public void felvesz(Targy targy, int darab) {
         for (int i = 0; i < darab; i++) {
-            System.out.println("felvette:"+targy);
+            System.out.println("felvette:" + targy);
+            felszereles.add(targy);
         }
-        felszereles.add(targy);
-        return felszereles;
-        
+
+    }
+
+    public void hasznal(String nev) {
+        int i = 0;
+        while (i < felszereles.size() && felszereles.get(i).getNev() != nev) {
+            i++;
+        }
+
+        if (i < felszereles.size()) {
+
+            felszereles.remove(i);
+
+        } else {
+            System.out.println("Nincs ilyen elem");
+        }
+    }
+
+    public void hasznal(String nev, int db) {
+        for (int i = 0; i < db; i++) {
+            hasznal(nev);
+        }
+
+    }
+
+    public void hasznal(String nev, int db, boolean van) {
+        if (van == true) {
+            hasznal(nev, db);
+        }else{
+            System.out.println("Nem töröltük... ");
+        }
     }
 
     @Override
     public String toString() {
-        return "Karakter{" + "eletero=" + eletero + ", ugyesseg=" + ugyesseg + ", szerencse=" + szerencse + ", felszereles=" + felszereles + '}';
+        return "Karakter{" +"nev:"+nev+ ", eletero=" + eletero + ", ugyesseg=" + ugyesseg + ", szerencse=" + szerencse + ", felszereles=" + felszereles + '}';
     }
+
     
-    
-    
+
+
 }
