@@ -1,8 +1,9 @@
 package game;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Targy {
+public class Targy implements Serializable{
 
     String leiras, nev;
     private UUID id;

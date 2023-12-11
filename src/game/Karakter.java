@@ -1,8 +1,9 @@
 package game;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Karakter {
+public class Karakter implements Serializable{
 
     private int eletero;
     private int ugyesseg;
@@ -12,7 +13,7 @@ public class Karakter {
 
     public <T> Karakter(String nev) {
         this.nev = nev;
-        this.eletero = (dobokocka() + dobokocka()) + 12;
+        this.eletero = dobokocka() + dobokocka() + 12;
         this.ugyesseg = dobokocka() + 6;
         this.szerencse = dobokocka() + 6;
         this.felszereles = new ArrayList<>();
