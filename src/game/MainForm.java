@@ -20,6 +20,7 @@ public class MainForm extends javax.swing.JFrame {
        
        jButton1.setVisible(false);
        jButton2.setText("Tovább");
+       
     }
 
     /**
@@ -48,6 +49,11 @@ public class MainForm extends javax.swing.JFrame {
         jButton1.setText("Másik irány");
 
         jButton2.setText("Egyik irány");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,6 +86,11 @@ public class MainForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+     
+        
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
