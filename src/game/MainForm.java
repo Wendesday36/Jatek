@@ -20,7 +20,12 @@ public class MainForm extends javax.swing.JFrame {
        helyszin = new Start();
        jTextArea1.insert(helyszin.leiras(),0);
        
-       jButton1.setVisible(false);
+       if (helyszin instanceof masikIrany) {
+            jButton1.setVisible(true);
+        }else{
+            jButton1.setVisible(false);
+                    
+        }
        jButton2.setText(helyszin.egyikBtnFelirata());
        
     }
@@ -72,24 +77,22 @@ public class MainForm extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addGap(21, 21, 21))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                        .addGap(91, 91, 91)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                        .addGap(34, 34, 34))))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap())
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,14 +107,26 @@ public class MainForm extends javax.swing.JFrame {
         jTextArea1.insert(helyszin.leiras()+"\n",0);
         
         jTextArea1.setCaretPosition(0);
-        jButton2.setText(helyszin.egyikBtnFelirata());
+       
         //jButton1.setVisible(true);
         //innen johetne a sok egymasba agyazott if
-        
+        if (helyszin instanceof masikIrany) {
+            masikIrany masik = (masikIrany)helyszin;
+           
+            jButton1.setVisible(true);
+           jButton1.setText(masik.masikBtnFelirata());
+           jTextArea1.insert(helyszin.leiras()+"\n",0);
+        }else{
+            jButton1.setVisible(false);
+                    
+        }jTextArea1.insert(helyszin.leiras()+"\n",0);
+         jButton2.setText(helyszin.egyikBtnFelirata());
+         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // masik irany
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
