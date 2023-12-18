@@ -49,9 +49,9 @@ public class MainForm extends javax.swing.JFrame {
         jButton1.setText("Másik irány");
 
         jButton2.setText("Egyik irány");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -87,10 +87,14 @@ public class MainForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-     
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //egyik irany
+        //naiv megoldas
+        Helyszin kezdes = new Kezdes();
+        jTextArea1.setText(kezdes.leiras());
+        //innen johetne a sok egymasba agyazott if
         
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
