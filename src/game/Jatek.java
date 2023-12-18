@@ -9,5 +9,5 @@ package game;
  * @author berta.z.anna
  */
 public class Jatek {
-   Karakter goblin = new Karakter(0, ugyesseg, 0)
+   Karakter goblin = new Karakter(0, 5, 0);
 }
