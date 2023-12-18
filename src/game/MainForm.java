@@ -13,13 +13,15 @@ public class MainForm extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
+    private Helyszin helyszin;
+    
     public MainForm() {
         initComponents();
-       Helyszin helyszin = new Start();
-       jTextArea1.setText(helyszin.leiras());
+       helyszin = new Start();
+       jTextArea1.insert(helyszin.leiras(),0);
        
        jButton1.setVisible(false);
-       jButton2.setText("Tovább");
+       jButton2.setText(helyszin.egyikBtnFelirata());
        
     }
 
@@ -41,12 +43,19 @@ public class MainForm extends javax.swing.JFrame {
         setTitle("Játék");
         setMinimumSize(new java.awt.Dimension(350, 200));
 
+        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Másik irány");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Egyik irány");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -76,11 +85,11 @@ public class MainForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -90,11 +99,20 @@ public class MainForm extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //egyik irany
         //naiv megoldas
-        Helyszin kezdes = new Kezdes();
-        jTextArea1.setText(kezdes.leiras());
+      helyszin=  helyszin.egyikIrany();
+                
+        jTextArea1.insert(helyszin.leiras()+"\n",0);
+        
+        jTextArea1.setCaretPosition(0);
+        jButton2.setText(helyszin.egyikBtnFelirata());
+        //jButton1.setVisible(true);
         //innen johetne a sok egymasba agyazott if
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // masik irany
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

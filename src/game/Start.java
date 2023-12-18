@@ -9,4 +9,18 @@ public class Start extends Helyszin{
         
     }
 
+    @Override
+    public Helyszin egyikIrany() {
+   
+        return new Kezdes();
+   
+    }
+
+    @Override
+    public String egyikBtnFelirata() {
+   
+        return "Tovább";
+   
+    }
+
 }
