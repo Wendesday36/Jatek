@@ -112,21 +112,39 @@ public class MainForm extends javax.swing.JFrame {
         //innen johetne a sok egymasba agyazott if
         if (helyszin instanceof masikIrany) {
             masikIrany masik = (masikIrany)helyszin;
-           
             jButton1.setVisible(true);
            jButton1.setText(masik.masikBtnFelirata());
-           jTextArea1.insert(helyszin.leiras()+"\n",0);
+           
         }else{
             jButton1.setVisible(false);
                     
-        }jTextArea1.insert(helyszin.leiras()+"\n",0);
+        }
+        
          jButton2.setText(helyszin.egyikBtnFelirata());
          
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // masik irany
+      helyszin=  helyszin.egyikIrany();
+    //  masikIrany masik = (masikIrany)helyszin;          
+        jTextArea1.insert(helyszin.leiras()+"\n",0);
+        
+        jTextArea1.setCaretPosition(0);
        
+        //jButton1.setVisible(true);
+        //innen johetne a sok egymasba agyazott if
+        if (helyszin instanceof masikIrany) {
+            
+            jButton1.setVisible(true);
+        //   jButton1.setText(hely.masikBtnFelirata());
+           
+        }else{
+            jButton1.setVisible(false);
+                    
+        }
+        
+         jButton2.setText(helyszin.egyikBtnFelirata());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

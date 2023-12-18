@@ -8,7 +8,7 @@ package game;
  *
  * @author berta.z.anna
  */
-public class Jobbra extends Helyszin{
+public class Jobbra extends Helyszin implements masikIrany{
 
     @Override
     public String leiras() {
@@ -20,13 +20,24 @@ public class Jobbra extends Helyszin{
     @Override
     public String egyikBtnFelirata() {
 
-        return "valami";
+        return "Nyugat";
 
     }
+    
 
     @Override
     public Helyszin egyikIrany() {
         return this;
+    }
+
+    @Override
+    public String masikBtnFelirata() {
+        return "Kelet";
+    }
+
+    @Override
+    public Helyszin masikIrany() {
+    return this;
     }
     
 }
